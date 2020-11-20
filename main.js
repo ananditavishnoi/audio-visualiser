@@ -1,14 +1,19 @@
 // TO DO
 // look for Spread Operator - JS
 // https://blog.skay.dev/es6-spread-operator
+function handleFiles(event) {
+    var files = event.target.files;
+    document.getElementById("audio-src").setAttribute("src", URL.createObjectURL(files[0]));
+    document.getElementById("audio").load();
+}
 
+document.getElementById("input-audio").addEventListener("change", handleFiles, false);
 
 function onload() {
     let canvas = document.getElementById("audio_visual");
     let ctx = canvas.getContext("2d");
     let audio = document.getElementById("audio");
     let AudioCtx = new AudioContext();
-
     // getContext() is a function that return what's inside the canvas element
 
 
@@ -54,5 +59,5 @@ function onload() {
         AudioCtx.resume();
     }
 }
-
 onload();
+add();

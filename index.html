@@ -6,10 +6,26 @@
 </head>
 
 <body>
-    <canvas id="audio_visual" height="500" width="500"></canvas>
-    <audio id="audio" controls crossorigin=“anonymous” src="/audio.mp3"></audio>
+    Input your audio:<input type="file" id="input-audio" accept=".mp3, .ogg. .wav">
+    <canvas id="audio_visual"></canvas>
+    <audio id="audio" controls crossorigin=“anonymous”>
+        <source src="" id="audio-src" />
+    </audio>
 
     <script type="text/javascript" src="main.js"></script>
 </body>
+<style>
+    audio {
+        width: 100%;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+        border-radius: 90px;
+        transform: scale(1.05);
+    }
+    
+    canvas {
+        width: 100%;
+        height: 500px;
+    }
+</style>
 
 </html>
