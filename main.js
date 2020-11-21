@@ -1,6 +1,7 @@
 // TO DO
 // look for Spread Operator - JS
 // https://blog.skay.dev/es6-spread-operator
+
 function handleFiles(event) {
     var files = event.target.files;
     document.getElementById("audio-src").setAttribute("src", URL.createObjectURL(files[0]));
@@ -50,6 +51,12 @@ function onload() {
             ctx.beginPath();
             ctx.moveTo(space * i, canvas.height); //x,y
             ctx.lineTo(space * i, canvas.height - value); //x,y
+            var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+            gradient.addColorStop("0", "magenta");
+            gradient.addColorStop("0.5", "blue");
+            gradient.addColorStop("1.0", "red");
+            // Fill with gradient
+            ctx.strokeStyle = gradient;
             ctx.stroke();
         })
     }
@@ -60,4 +67,3 @@ function onload() {
     }
 }
 onload();
-add();
